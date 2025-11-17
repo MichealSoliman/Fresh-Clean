@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="ltr">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -215,6 +215,111 @@
             100% {
                 transform: scale(1);
             }
+        }
+    </style>
+    <!-- serve -->
+      <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap');
+        body {
+            font-family: 'Tajawal', sans-serif;
+        }
+        
+        .service-card {
+            transition: all 0.4s ease;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .service-image {
+            transition: transform 0.6s ease;
+            height: 220px;
+            object-fit: cover;
+        }
+        
+        .service-card:hover .service-image {
+            transform: scale(1.08);
+        }
+        
+        .service-overlay {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+        }
+        
+        .service-card:hover .service-overlay {
+            opacity: 1;
+        }
+        
+        .badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: linear-gradient(135deg, #f97316, #fb923c);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            z-index: 10;
+        }
+        
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-whatsapp:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+        }
+        
+        .btn-call {
+            background: linear-gradient(135deg, #10b981, #059669);
+            transition: all 0.3s ease;
+        }
+        
+        .btn-call:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(16, 185, 129, 0.4);
+        }
+        
+        .floating-icon {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            right: 0;
+            width: 60%;
+            height: 4px;
+            background: linear-gradient(to left, #f97316, #10b981);
+            border-radius: 2px;
         }
     </style>
 </head>
@@ -750,6 +855,228 @@
           
         </div>
     </section>
+
+
+
+        <!-- قسم خدماتنا -->
+    <section class="py-20 px-4 md:px-8 lg:px-16 " >
+        <div class="max-w-7xl mx-auto">
+            <!-- العنوان الرئيسي -->
+            <div class="text-center mb-16">
+                <span class="inline-block bg-green-100 text-green-600 font-bold py-1 px-4 rounded-full text-sm mb-4">خدماتنا</span>
+                <h2 class="section-title text-4xl md:text-5xl font-bold text-gray-900 mb-4">خدمات تنظيف <span class="text-green-600">شاملة</span> بجودة <span class="text-orange-500">استثنائية</span></h2>
+                <p class="text-xl text-gray-700 max-w-3xl mx-auto">نقدم مجموعة متكاملة من خدمات التنظيف المحترفة التي تلبي جميع احتياجاتك وتضمن لك بيئة نظيفة وصحية</p>
+            </div>
+            
+            <!-- شبكة الخدمات -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- خدمة 1 -->
+                <div class="service-card bg-white rounded-2xl shadow-md overflow-hidden">
+                    <div class="badge">الأكثر طلباً</div>
+                    <div class="relative overflow-hidden">
+                        <img src="./asstes/img/house-cleaning.png" 
+                             alt="تنظيف المنازل" class="service-image w-full h-auto">
+                        
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">تنظيف المنازل الشامل</h3>
+                        <p class="text-gray-600 mb-4">خدمة تنظيف كاملة للمنازل تشمل جميع الغرف، المطابخ، الحمامات، والأركان. نستخدم منتجات صديقة للبيئة وآمنة للعائلة.</p>
+                        <div class="flex justify-between items-center mt-6">
+                            <span class="text-green-600 font-bold text-lg">199 ريال</span>
+                            <div class="flex gap-2">
+                                <button class="btn-call text-white py-2 px-4 rounded-lg flex items-center gap-2">
+                                    <i class="fas fa-phone"></i>
+                                    <span>اتصل</span>
+                                </button>
+                                <button class="btn-whatsapp text-white py-2 px-4 rounded-lg flex items-center gap-2">
+                                    <i class="fab fa-whatsapp"></i>
+                                    <span>واتساب</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- خدمة 2 -->
+                <div class="service-card bg-white rounded-2xl shadow-md overflow-hidden">
+                    <div class="relative overflow-hidden">
+                        <img src="./asstes/img/cleaning-offices-and-companies.png" 
+                             alt="تنظيف المكاتب" class="service-image w-full h-auto">
+                      
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">تنظيف المكاتب والشركات</h3>
+                        <p class="text-gray-600 mb-4">حلول تنظيف متكاملة للمكاتب والشركات نضمن لك بيئة عمل نظيفة ومنظمة تعزز الإنتاجية والراحة لموظفيك.</p>
+                        <div class="flex justify-between items-center mt-6">
+                            <span class="text-green-600 font-bold text-lg">299 ريال</span>
+                            <div class="flex gap-2">
+                                <button class="btn-call text-white py-2 px-4 rounded-lg flex items-center gap-2">
+                                    <i class="fas fa-phone"></i>
+                                    <span>اتصل</span>
+                                </button>
+                                <button class="btn-whatsapp text-white py-2 px-4 rounded-lg flex items-center gap-2">
+                                    <i class="fab fa-whatsapp"></i>
+                                    <span>واتساب</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+              <!-- خدمة تنظيف الخزانات -->
+<div class="service-card bg-white rounded-2xl shadow-md overflow-hidden">
+    <div class="badge">عرض خاص</div>
+    <div class="relative overflow-hidden">
+        <img src="./asstes/img/cleaning-cupboards.png" 
+             alt="تنظيف الخزانات" class="service-image w-full h-auto">
+   
+    </div>
+
+    <div class="p-6">
+        <h3 class="text-xl font-bold text-gray-900 mb-3">تنظيف وتعقيم خزانات المياه</h3>
+
+        <p class="text-gray-600 mb-4">
+            خدمة شاملة لتنظيف وتعقيم الخزانات باستخدام معدات احترافية تضمن إزالة الرواسب
+            والروائح وتوفير مياه نقية وصحية للاستخدام.
+        </p>
+
+        <div class="flex justify-between items-center mt-6">
+            <span class="text-green-600 font-bold text-lg">
+                <span class="line-through text-gray-400 text-sm">199 ريال</span> 129 ريال
+            </span>
+
+            <div class="flex gap-2">
+                <button class="btn-call text-white py-2 px-4 rounded-lg flex items-center gap-2">
+                    <i class="fas fa-phone"></i>
+                    <span>اتصل</span>
+                </button>
+
+                <button class="btn-whatsapp text-white py-2 px-4 rounded-lg flex items-center gap-2">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>واتساب</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+                
+             <!-- خدمة تنظيف الفنادق -->
+<div class="service-card bg-white rounded-2xl shadow-md overflow-hidden">
+    <div class="relative overflow-hidden">
+        <img src="./asstes/img/hotel-cleaning.png" 
+             alt="تنظيف الفنادق" class="service-image w-full h-auto">
+      
+    </div>
+
+    <div class="p-6">
+        <h3 class="text-xl font-bold text-gray-900 mb-3">تنظيف وصيانة مرافق الفنادق</h3>
+
+        <p class="text-gray-600 mb-4">
+            خدمة مخصصة للفنادق تشمل تنظيف الغرف، الممرات، اللوبي، وتعقيم الأسطح 
+            لضمان تجربة ضيافة راقية وبيئة نظيفة وآمنة للنزلاء.
+        </p>
+
+        <div class="flex justify-between items-center mt-6">
+            <span class="text-green-600 font-bold text-lg">
+                تبدأ من 159 ريال
+            </span>
+
+            <div class="flex gap-2">
+                <button class="btn-call text-white py-2 px-4 rounded-lg flex items-center gap-2">
+                    <i class="fas fa-phone"></i>
+                    <span>اتصل</span>
+                </button>
+
+                <button class="btn-whatsapp text-white py-2 px-4 rounded-lg flex items-center gap-2">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>واتساب</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+                
+         <!-- خدمة لمسات الاحترافية في النظافة -->
+<div class="service-card bg-white rounded-2xl shadow-md overflow-hidden">
+    <div class="relative overflow-hidden">
+        <img src="./asstes/img/professional-touch.png" 
+             alt="لمسات احترافية في النظافة" class="service-image w-full h-auto">
+        <div class="service-overlay">
+            <h3 class="text-white text-xl font-bold">لمسات احترافية في النظافة</h3>
+        </div>
+    </div>
+
+    <div class="p-6">
+        <h3 class="text-xl font-bold text-gray-900 mb-3">خدمة اللمسة الاحترافية</h3>
+
+        <p class="text-gray-600 mb-4">
+            نقدم لك نظافة بمستوى مختلف تماماً، مع تفاصيل دقيقة ولمسات احترافية 
+            تجعل المكان لامعاً ومرتباً باستخدام أدوات متطورة ومعايير جودة عالية.
+        </p>
+
+        <div class="flex justify-between items-center mt-6">
+            <span class="text-green-600 font-bold text-lg">
+                199 ريال
+            </span>
+
+            <div class="flex gap-2">
+                <button class="btn-call text-white py-2 px-4 rounded-lg flex items-center gap-2">
+                    <i class="fas fa-phone"></i>
+                    <span>اتصل</span>
+                </button>
+
+                <button class="btn-whatsapp text-white py-2 px-4 rounded-lg flex items-center gap-2">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>واتساب</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+                
+              <!-- خدمة 6 -->
+<div class="service-card bg-white rounded-2xl shadow-md overflow-hidden relative">
+    <div class="badge">مميز</div>
+    <div class="relative overflow-hidden">
+        <img src="./asstes/img/cleaning-solutions.png" 
+             alt="أفضل حلول النظافة" class="service-image w-full h-auto">
+       
+    </div>
+    <div class="p-6">
+        <h3 class="text-xl font-bold text-gray-900 mb-3">خدمات تنظيف متكاملة</h3>
+        <p class="text-gray-600 mb-4">نوفر حلول نظافة متكاملة للمنازل والمكاتب، تشمل التنظيف العميق، إزالة الغبار، وتعقيم الأسطح لضمان بيئة صحية ونظيفة.</p>
+        <div class="flex justify-between items-center mt-6">
+            <span class="text-green-600 font-bold text-lg">399 ريال</span>
+            <div class="flex gap-2">
+                <button class="btn-call text-white bg-blue-600 py-2 px-4 rounded-lg flex items-center gap-2 hover:bg-blue-700 transition">
+                    <i class="fas fa-phone"></i>
+                    <span>اتصل</span>
+                </button>
+                <button class="btn-whatsapp text-white bg-green-500 py-2 px-4 rounded-lg flex items-center gap-2 hover:bg-green-600 transition">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>واتساب</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div>
+            
+
+        </div>
+    </section>
+    
+    <!-- أيقونة واتساب عائمة -->
+    <div class="fixed bottom-6 left-6 z-50">
+        <a href="#" class="btn-whatsapp rounded-full w-14 h-14 flex items-center justify-center text-white text-2xl floating-icon shadow-lg">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
     
 </body>
 </html>
