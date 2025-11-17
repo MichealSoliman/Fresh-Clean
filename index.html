@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>كلين  - Furniture Cleaning Service</title>
+    <title>كلين - Furniture Cleaning Service</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
@@ -329,95 +329,121 @@
             position: relative;
             display: inline-block;
         }
-
-       
     </style>
     <!-- لماذا تخترنا -->
-       <style>
+    <style>
         @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap');
-        
+
         body {
             font-family: 'Tajawal', sans-serif;
         }
-        
+
         .feature-card {
             transition: all 0.5s ease;
             background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
         }
-        
+
         .feature-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
         }
-        
+
         .gradient-bg {
             background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 50%, #f8fafc 100%);
         }
-        
+
         .floating-icon {
             animation: float-icon 6s ease-in-out infinite;
         }
-        
+
         @keyframes float-icon {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            33% { transform: translateY(-15px) rotate(5deg); }
-            66% { transform: translateY(10px) rotate(-5deg); }
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            33% {
+                transform: translateY(-15px) rotate(5deg);
+            }
+
+            66% {
+                transform: translateY(10px) rotate(-5deg);
+            }
         }
-        
+
         .pulse-dot {
             animation: pulse 2s infinite;
         }
-        
+
         @keyframes pulse {
-            0% { opacity: 0.6; }
-            50% { opacity: 1; }
-            100% { opacity: 0.6; }
+            0% {
+                opacity: 0.6;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0.6;
+            }
         }
-        
+
         .tech-badge {
             background: linear-gradient(135deg, #154461, #154461);
             animation: badge-pulse 3s ease-in-out infinite;
         }
-        
+
         @keyframes badge-pulse {
-            0%, 100% { 
+
+            0%,
+            100% {
                 box-shadow: 0 4px 12px #154461;
             }
-            50% { 
+
+            50% {
                 box-shadow: 0 6px 20px #154461;
             }
         }
-        
+
         .stat-counter {
             font-feature-settings: "tnum";
             font-variant-numeric: tabular-nums;
         }
-        
+
         .leaf-fall {
             animation: leaf-fall 8s ease-in infinite;
         }
-        
+
         @keyframes leaf-fall {
-            0% { 
+            0% {
                 transform: translateY(-50px) rotate(0deg);
                 opacity: 0;
             }
-            50% { 
+
+            50% {
                 opacity: 0.7;
             }
-            100% { 
+
+            100% {
                 transform: translateY(50px) rotate(360deg);
                 opacity: 0;
             }
         }
-        
+
         .progress-ring {
             animation: progress-spin 3s linear infinite;
         }
-        
+
         @keyframes progress-spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
     </style>
     <!-- footer -->
@@ -524,6 +550,252 @@
         .app-download:hover {
             background: rgba(255, 255, 255, 0.2);
             transform: translateY(-2px);
+        }
+    </style>
+    <!-- اؤاء العملاء -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap');
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 50%, #f8fafc 100%);
+        }
+
+        .faq-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid #e5e7eb;
+        }
+
+        .faq-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border-color: #154461;
+        }
+
+        .faq-card.active {
+            border-color: #154461;
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.15);
+        }
+
+        .testimonial-card {
+            transition: all 0.5s ease;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .client-avatar {
+            width: 60px;
+            height: 60px;
+            border: 3px solid #154461;
+        }
+
+        .rating-stars {
+            color: #fbbf24;
+        }
+
+        .floating-element {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-15px) rotate(5deg);
+            }
+        }
+
+        .pulse-dot {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                opacity: 0.6;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0.6;
+            }
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .accordion-content.open {
+            max-height: 500px;
+        }
+
+        .accordion-icon {
+            transition: all 0.3s ease;
+        }
+
+        .accordion-icon.rotated {
+            transform: rotate(180deg);
+        }
+
+        .fresh-badge {
+            background: linear-gradient(135deg, #154461, #154461);
+            animation: badge-pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes badge-pulse {
+
+            0%,
+            100% {
+                box-shadow: 0 4px 12px #154461;
+            }
+
+            50% {
+                box-shadow: 0 6px 20px #154461;
+            }
+        }
+
+        .question-mark {
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+        }
+    </style>
+    <!-- banner -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap');
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #ecfdf5 0%, #f0fdf4 50%, #f8fafc 100%);
+        }
+
+        .floating-icon {
+            animation: float-icon 4s ease-in-out infinite;
+        }
+
+        @keyframes float-icon {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-10px) rotate(5deg);
+            }
+        }
+
+        .pulse-dot {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                opacity: 0.6;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0.6;
+            }
+        }
+
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #0ec244);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px #0ec244
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px #0ec244;
+        }
+
+        .btn-call {
+            background: linear-gradient(135deg, #154461, #154461);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px #154461;
+        }
+
+        .btn-call:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px #154461;
+        }
+
+        .contact-card {
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .separator-line {
+            background: linear-gradient(90deg, transparent 0%, #154461 50%, transparent 100%);
+            height: 1px;
+            opacity: 0.3;
+        }
+
+        .leaf-float {
+            animation: leaf-float 8s ease-in-out infinite;
+        }
+
+        @keyframes leaf-float {
+
+            0%,
+            100% {
+                transform: translateY(0px) translateX(0px) rotate(0deg);
+                opacity: 0.3;
+            }
+
+            33% {
+                transform: translateY(-15px) translateX(10px) rotate(120deg);
+                opacity: 0.6;
+            }
+
+            66% {
+                transform: translateY(10px) translateX(-10px) rotate(240deg);
+                opacity: 0.4;
+            }
+        }
+
+        .icon-glow {
+            filter: drop-shadow(0 2px 8px #154461);
         }
     </style>
 </head>
@@ -646,8 +918,8 @@
         <div class="max-w-7xl mx-auto relative">
 
             <!-- Hero Text -->
-            <div class="relative z-10 animate-fade-in-up mr-[50px]  lg:mr-[150px]  ">
-                <h1 class="hero-text">fresh clean</h1>
+            <div class="relative z-10 animate-fade-in-up mr-[30px]   lg:mr-[150px]  ">
+                <h1 class="hero-text ">fresh clean</h1>
             </div>
 
             <!-- Hero Image Container -->
@@ -714,7 +986,7 @@
     </script>
 
     <!-- Services Section -->
-    <section class="py-16 pt-[350px] px-4 md:px-8 lg:px-16">
+    <section class="hidden md:block py-16 pt-[350px] px-4 md:px-8 lg:px-16" dir="ltr">
         <div class="max-w-7xl mx-auto">
             <div class="relative">
 
@@ -739,8 +1011,7 @@
                                 class="service-card min-w-[calc(33.333%-16px)] bg-white rounded-2xl overflow-hidden shadow-md flex h-48">
                                 <!-- الصورة -->
                                 <div class="w-40 h-full overflow-hidden rounded-l-xl">
-                                    <img src="https://images.unsplash.com/photo-1563453392212-326f5e854473?w=400"
-                                        class="w-full h-full object-cover">
+                                    <img src="./asstes/img/image_service_01.jpg" class="w-full h-full object-cover">
                                 </div>
                                 <!-- المحتوى العربي -->
                                 <div class="flex-1 p-5 flex flex-col justify-center text-right">
@@ -748,7 +1019,11 @@
                                     <p class="text-gray-600 text-sm leading-relaxed">
                                         خدمة تنظيف شاملة للمنازل .
                                     </p>
-                                    <span class="price-badge mt-3">ابتداءً من 399 جـ</span>
+                                    <a href="tel:0500000000"
+                                        class="price-badge mt-3 cursor-pointer flex items-center justify-center gap-2">
+                                        <i class="fas fa-phone"></i>
+                                        <span>اتصل الآن</span>
+                                    </a>
                                 </div>
 
 
@@ -759,15 +1034,18 @@
                             <div
                                 class="service-card min-w-[calc(33.333%-16px)] bg-white rounded-2xl overflow-hidden shadow-md flex h-48">
                                 <div class="w-40 h-full overflow-hidden rounded-l-xl">
-                                    <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400"
-                                        class="w-full h-full object-cover">
+                                    <img src="./asstes/img/image_service_02.jpg" class="w-full h-full object-cover">
                                 </div>
                                 <div class="flex-1 p-5 flex flex-col justify-center text-right">
                                     <h3 class="text-xl font-semibold text-gray-900 mb-2">تنظيف الشقق </h3>
                                     <p class="text-gray-600 text-sm leading-relaxed">
                                         تنظيف شامل للشقق المفروشة .
                                     </p>
-                                    <span class="price-badge mt-3">ابتداءً من 499 جـ</span>
+                                    <a href="tel:0500000000"
+                                        class="price-badge mt-3 cursor-pointer flex items-center justify-center gap-2">
+                                        <i class="fas fa-phone"></i>
+                                        <span>اتصل الآن</span>
+                                    </a>
                                 </div>
 
 
@@ -779,8 +1057,7 @@
                                 class="service-card min-w-[calc(33.333%-16px)] bg-white rounded-2xl overflow-hidden shadow-md flex h-48">
 
                                 <div class="w-40 h-full overflow-hidden rounded-l-xl">
-                                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=400"
-                                        class="w-full h-full object-cover">
+                                    <img src="./asstes/img/image_service_03.jpg" class="w-full h-full object-cover">
                                 </div>
 
                                 <div class="flex-1 p-5 flex flex-col justify-center text-right">
@@ -788,64 +1065,82 @@
                                     <p class="text-gray-600 text-sm leading-relaxed">
                                         تنظيف يومي أو أسبوعي.
                                     </p>
-                                    <span class="price-badge mt-3">ابتداءً من 299 جـ</span>
+                                    <a href="tel:0500000000"
+                                        class="price-badge mt-3 cursor-pointer flex items-center justify-center gap-2">
+                                        <i class="fas fa-phone"></i>
+                                        <span>اتصل الآن</span>
+                                    </a>
+
                                 </div>
 
                             </div>
 
-    <!-- كارد 4 -->
-    <div class="service-card min-w-[calc(33.333%-16px)] bg-white rounded-2xl overflow-hidden shadow-md flex h-48">
+                            <!-- كارد 4 -->
+                            <div
+                                class="service-card min-w-[calc(33.333%-16px)] bg-white rounded-2xl overflow-hidden shadow-md flex h-48">
 
-        <div class="w-40 h-full overflow-hidden rounded-l-xl">
-            <img src="https://images.unsplash.com/photo-1600490036275-0bd2bd781e48?w=400"
-                 class="w-full h-full object-cover">
-        </div>
+                                <div class="w-40 h-full overflow-hidden rounded-l-xl">
+                                    <img src="./asstes/img/image_service_04.jpg" class="w-full h-full object-cover">
+                                </div>
 
-        <div class="flex-1 p-5 flex flex-col justify-center text-right">
-            <h3 class="text-xl font-semibold text-gray-900 mb-2">تنظيف السجاد</h3>
-            <p class="text-gray-600 text-sm leading-relaxed">
-                تنظيف شامل للسجاد .
-            </p>
-            <span class="price-badge mt-3">ابتداءً من 199 جـ</span>
-        </div>
+                                <div class="flex-1 p-5 flex flex-col justify-center text-right">
+                                    <h3 class="text-xl font-semibold text-gray-900 mb-2">تنظيف السجاد</h3>
+                                    <p class="text-gray-600 text-sm leading-relaxed">
+                                        تنظيف شامل للسجاد .
+                                    </p>
+                                    <a href="tel:0500000000"
+                                        class="price-badge mt-3 cursor-pointer flex items-center justify-center gap-2">
+                                        <i class="fas fa-phone"></i>
+                                        <span>اتصل الآن</span>
+                                    </a>
+                                </div>
 
-    </div>
-
-
-    <!-- كارد 5 -->
-    <div class="service-card min-w-[calc(33.333%-16px)] bg-white rounded-2xl overflow-hidden shadow-md flex h-48">
- <div class="w-40 h-full overflow-hidden rounded-l-xl">
-            <img src="https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=400"
-                 class="w-full h-full object-cover">
-        </div>
-        <div class="flex-1 p-5 flex flex-col justify-center text-right">
-            <h3 class="text-xl font-semibold text-gray-900 mb-2">تنظيف النوافذ</h3>
-            <p class="text-gray-600 text-sm leading-relaxed">
-                تنظيف الزجاج والنوافذ.
-            </p>
-            <span class="price-badge mt-3">ابتداءً من 149 جـ</span>
-        </div>
-
-       
-    </div>
+                            </div>
 
 
-    <!-- كارد 6 -->
-    <div class="service-card min-w-[calc(33.333%-16px)] bg-white rounded-2xl overflow-hidden shadow-md flex h-48">
-  <div class="w-40 h-full overflow-hidden rounded-l-xl">
-            <img src="https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?w=400"
-                 class="w-full h-full object-cover">
-        </div>
-        <div class="flex-1 p-5 flex flex-col justify-center text-right">
-            <h3 class="text-xl font-semibold text-gray-900 mb-2">غسيل الكنب بالبخار</h3>
-            <p class="text-gray-600 text-sm leading-relaxed">
-                تنظيف وتطهير .
-            </p>
-            <span class="price-badge mt-3">ابتداءً من 249 جـ</span>
-        </div>
+                            <!-- كارد 5 -->
+                            <div
+                                class="service-card min-w-[calc(33.333%-16px)] bg-white rounded-2xl overflow-hidden shadow-md flex h-48">
+                                <div class="w-40 h-full overflow-hidden rounded-l-xl">
+                                    <img src="./asstes/img/image_service_02.jpg" class="w-full h-full object-cover">
+                                </div>
+                                <div class="flex-1 p-5 flex flex-col justify-center text-right">
+                                    <h3 class="text-xl font-semibold text-gray-900 mb-2">تنظيف النوافذ</h3>
+                                    <p class="text-gray-600 text-sm leading-relaxed">
+                                        تنظيف الزجاج والنوافذ.
+                                    </p>
+                                    <a href="tel:0500000000"
+                                        class="price-badge mt-3 cursor-pointer flex items-center justify-center gap-2">
+                                        <i class="fas fa-phone"></i>
+                                        <span>اتصل الآن</span>
+                                    </a>
+                                </div>
 
-      
-    </div>
+
+                            </div>
+
+
+                            <!-- كارد 6 -->
+                            <div
+                                class="service-card min-w-[calc(33.333%-16px)] bg-white rounded-2xl overflow-hidden shadow-md flex h-48">
+                                <div class="w-40 h-full overflow-hidden rounded-l-xl">
+                                    <img src="https://images.unsplash.com/photo-1628177142898-93e36e4e3a50?w=400"
+                                        class="w-full h-full object-cover">
+                                </div>
+                                <div class="flex-1 p-5 flex flex-col justify-center text-right">
+                                    <h3 class="text-xl font-semibold text-gray-900 mb-2">غسيل الكنب بالبخار</h3>
+                                    <p class="text-gray-600 text-sm leading-relaxed">
+                                        تنظيف وتطهير .
+                                    </p>
+                                    <a href="tel:0500000000"
+                                        class="price-badge mt-3 cursor-pointer flex items-center justify-center gap-2">
+                                        <i class="fas fa-phone"></i>
+                                        <span>اتصل الآن</span>
+                                    </a>
+                                </div>
+
+
+                            </div>
                         </div>
 
                     </div>
@@ -941,10 +1236,10 @@
     </script>
 
     <!-- قسم من نحن المحسن -->
-    <section class="py-20 px-4 md:px-8 lg:px-16">
+    <section class="py-20 px-4 md:px-8 md:mt-[50px] lg:px-16">
         <div class="max-w-7xl mx-auto">
             <!-- العنوان الرئيسي -->
-            <div class="text-center mb-16">
+            <div class="text-center mb-16 ">
                 <span
                     class="inline-block bg-orange-100 text-orange-600 font-bold py-1 px-4 rounded-full text-sm mb-4">من
                     نحن</span>
@@ -1107,7 +1402,7 @@
                         <p class="text-gray-600 mb-4">خدمة تنظيف كاملة للمنازل تشمل جميع الغرف، المطابخ، الحمامات،
                             والأركان. نستخدم منتجات صديقة للبيئة وآمنة للعائلة.</p>
                         <div class="flex justify-between items-center mt-6">
-                            <span class="text-[#154461] font-bold text-lg">199 ريال</span>
+                            
                             <div class="flex gap-2">
                                 <button class="btn-call text-white py-2 px-4 rounded-lg flex items-center gap-2">
                                     <i class="fas fa-phone"></i>
@@ -1134,7 +1429,7 @@
                         <p class="text-gray-600 mb-4">حلول تنظيف متكاملة للمكاتب والشركات نضمن لك بيئة عمل نظيفة ومنظمة
                             تعزز الإنتاجية والراحة لموظفيك.</p>
                         <div class="flex justify-between items-center mt-6">
-                            <span class="text-[#154461] font-bold text-lg">299 ريال</span>
+                         
                             <div class="flex gap-2">
                                 <button class="btn-call text-white py-2 px-4 rounded-lg flex items-center gap-2">
                                     <i class="fas fa-phone"></i>
@@ -1168,7 +1463,7 @@
 
                         <div class="flex justify-between items-center mt-6">
                             <span class="text-[#154461] font-bold text-lg">
-                                <span class="line-through text-gray-400 text-sm">199 ريال</span> 129 ريال
+                               
                             </span>
 
                             <div class="flex gap-2">
@@ -1204,9 +1499,7 @@
                         </p>
 
                         <div class="flex justify-between items-center mt-6">
-                            <span class="text-[#154461] font-bold text-lg">
-                                تبدأ من 159 ريال
-                            </span>
+                           
 
                             <div class="flex gap-2">
                                 <button class="btn-call text-white py-2 px-4 rounded-lg flex items-center gap-2">
@@ -1243,9 +1536,7 @@
                         </p>
 
                         <div class="flex justify-between items-center mt-6">
-                            <span class="text-[#154461] font-bold text-lg">
-                                199 ريال
-                            </span>
+                           
 
                             <div class="flex gap-2">
                                 <button class="btn-call text-white py-2 px-4 rounded-lg flex items-center gap-2">
@@ -1276,7 +1567,7 @@
                         <p class="text-gray-600 mb-4">نوفر حلول نظافة متكاملة للمنازل والمكاتب، تشمل التنظيف العميق،
                             إزالة الغبار، وتعقيم الأسطح لضمان بيئة صحية ونظيفة.</p>
                         <div class="flex justify-between items-center mt-6">
-                            <span class="text-[#154461] font-bold text-lg">399 ريال</span>
+                           
                             <div class="flex gap-2">
                                 <button
                                     class="btn-call text-white bg-[#154461] py-2 px-4 rounded-lg flex items-center gap-2 hover:bg-[#154461] transition">
@@ -1284,7 +1575,7 @@
                                     <span>اتصل</span>
                                 </button>
                                 <button
-                                    class="btn-whatsapp text-white bg-green-500 py-2 px-4 rounded-lg flex items-center gap-2 hover:bg-green-500 transition">
+                                    class="btn-whatsapp text-white bg-[#154461] py-2 px-4 rounded-lg flex items-center gap-2 hover:bg-[#154461] transition">
                                     <i class="fab fa-whatsapp"></i>
                                     <span>واتساب</span>
                                 </button>
@@ -1306,10 +1597,18 @@
             <i class="fab fa-whatsapp"></i>
         </a>
     </div>
+    <!-- زر اتصال عائم -->
+    <div class="fixed bottom-[100px] left-6 z-50">
+        <a href="tel:0500000000"
+            class="bg-blue-600 hover:bg-blue-700 rounded-full w-14 h-14 flex items-center justify-center text-white text-2xl floating-icon shadow-lg transition">
+            <i class="fas fa-phone"></i>
+        </a>
+    </div>
 
-        <!-- قسم "لماذا تختار فريش كلين؟" -->
+
+    <!-- قسم "لماذا تختار فريش كلين؟" -->
     <section class="py-20 px-4 md:px-8 lg:px-16 gradient-bg relative overflow-hidden">
-        
+
         <!-- العناصر المتحركة في الخلفية -->
         <div class="absolute inset-0 overflow-hidden">
             <div class="floating-icon absolute top-20 left-20 text-[#154461] text-6xl">
@@ -1328,44 +1627,47 @@
                 <i class="fas fa-leaf"></i>
             </div>
         </div>
-        
+
         <div class="max-w-7xl mx-auto relative z-10">
-            
+
             <!-- العنوان الرئيسي -->
             <div class="text-center mb-16">
-                <span class="inline-block bg-[#154461] text-white font-bold py-2 px-6 rounded-full text-sm mb-4">تميز فريش كلين</span>
-                
+                <span class="inline-block bg-[#154461] text-white font-bold py-2 px-6 rounded-full text-sm mb-4">تميز
+                    فريش كلين</span>
+
                 <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                    لماذا تختار 
+                    لماذا تختار
                     <span class="text-[#154461]">فريش كلين</span>
                     ؟
                 </h2>
-                
+
                 <p class="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-                    نقدم تجربة تنظيف فريدة تجمع بين أحدث التقنيات والخدمة المتميزة 
+                    نقدم تجربة تنظيف فريدة تجمع بين أحدث التقنيات والخدمة المتميزة
                     لضمان رضاك التام في كل مرة
                 </p>
             </div>
 
             <!-- الشبكة الرئيسية للمميزات -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
-                
+
                 <!-- الميزة الرئيسية 1 -->
                 <div class="feature-card rounded-2xl p-8 shadow-lg">
                     <div class="flex items-start gap-6">
                         <div class="flex-shrink-0">
-                            <div class="w-16 h-16 rounded-2xl bg-[#154461] flex items-center justify-center text-white text-2xl">
+                            <div
+                                class="w-16 h-16 rounded-2xl bg-[#154461] flex items-center justify-center text-white text-2xl">
                                 <i class="fas fa-microscope"></i>
                             </div>
                         </div>
                         <div class="flex-1">
                             <h3 class="text-2xl font-bold text-[#154461] mb-4">تقنيات تنظيف متطورة</h3>
                             <p class="text-gray-600 leading-relaxed mb-4">
-                                نستخدم أحدث التقنيات في عالم التنظيف مثل البخار عالي الضغط، 
-                                أنظمة التعقيم بالأشعة فوق البنفسجية، والمنظفات الذكية 
+                                نستخدم أحدث التقنيات في عالم التنظيف مثل البخار عالي الضغط،
+                                أنظمة التعقيم بالأشعة فوق البنفسجية، والمنظفات الذكية
                                 التي تتكيف مع أنواع الأسطح المختلفة.
                             </p>
-                            <div class="tech-badge inline-flex items-center gap-2 text-white px-4 py-2 rounded-full text-sm font-bold">
+                            <div
+                                class="tech-badge inline-flex items-center gap-2 text-white px-4 py-2 rounded-full text-sm font-bold">
                                 <i class="fas fa-robot"></i>
                                 تكنولوجيا متقدمة
                             </div>
@@ -1377,17 +1679,19 @@
                 <div class="feature-card rounded-2xl p-8 shadow-lg">
                     <div class="flex items-start gap-6">
                         <div class="flex-shrink-0">
-                            <div class="w-16 h-16 rounded-2xl bg-[#154461] flex items-center justify-center text-white text-2xl">
+                            <div
+                                class="w-16 h-16 rounded-2xl bg-[#154461] flex items-center justify-center text-white text-2xl">
                                 <i class="fas fa-user-shield"></i>
                             </div>
                         </div>
                         <div class="flex-1">
                             <h3 class="text-2xl font-bold text-[#154461] mb-4">فريق محترف معتمد</h3>
                             <p class="text-gray-600 leading-relaxed mb-4">
-                                جميع موظفينا مدربون تدريباً عالياً وحاصلون على شهادات معتمدة 
+                                جميع موظفينا مدربون تدريباً عالياً وحاصلون على شهادات معتمدة
                                 في مجال النظافة والتعقيم. نضمن لك خدمة محترفة من فريق موثوق.
                             </p>
-                            <div class="tech-badge inline-flex items-center gap-2 text-white px-4 py-2 rounded-full text-sm font-bold">
+                            <div
+                                class="tech-badge inline-flex items-center gap-2 text-white px-4 py-2 rounded-full text-sm font-bold">
                                 <i class="fas fa-certificate"></i>
                                 شهادات معتمدة
                             </div>
@@ -1399,10 +1703,11 @@
 
             <!-- الشبكة الثانوية للمميزات -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-                
+
                 <!-- ميزة 1 -->
                 <div class="feature-card rounded-2xl p-6 text-center">
-                    <div class="w-12 h-12 rounded-xl bg-[#154461] flex items-center justify-center text-white text-xl mx-auto mb-4">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-[#154461] flex items-center justify-center text-white text-xl mx-auto mb-4">
                         <i class="fas fa-leaf"></i>
                     </div>
                     <h4 class="text-lg font-bold text-[#154461] mb-3">منتجات صديقة للبيئة</h4>
@@ -1413,7 +1718,8 @@
 
                 <!-- ميزة 2 -->
                 <div class="feature-card rounded-2xl p-6 text-center">
-                    <div class="w-12 h-12 rounded-xl bg-[#154461] flex items-center justify-center text-white text-xl mx-auto mb-4">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-[#154461] flex items-center justify-center text-white text-xl mx-auto mb-4">
                         <i class="fas fa-bolt"></i>
                     </div>
                     <h4 class="text-lg font-bold text-[#154461] mb-3">خدمة سريعة الاستجابة</h4>
@@ -1424,7 +1730,8 @@
 
                 <!-- ميزة 3 -->
                 <div class="feature-card rounded-2xl p-6 text-center">
-                    <div class="w-12 h-12 rounded-xl bg-[#154461] flex items-center justify-center text-white text-xl mx-auto mb-4">
+                    <div
+                        class="w-12 h-12 rounded-xl bg-[#154461] flex items-center justify-center text-white text-xl mx-auto mb-4">
                         <i class="fas fa-shield-alt"></i>
                     </div>
                     <h4 class="text-lg font-bold text-[#154461] mb-3">ضمان الجودة</h4>
@@ -1438,37 +1745,44 @@
             <!-- قسم الإحصائيات -->
             <div class="bg-white rounded-2xl p-8 shadow-lg">
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                    
+
                     <div class="relative">
-                        <div class="text-3xl md:text-4xl font-bold text-[#154461] mb-2 stat-counter" id="happyClients">0</div>
+                        <div class="text-3xl md:text-4xl font-bold text-[#154461] mb-2 stat-counter" id="happyClients">0
+                        </div>
                         <div class="text-gray-600 text-sm">عميل راضٍ</div>
                         <div class="absolute -top-2 -right-2 w-4 h-4 rounded-full bg-green-400 pulse-dot"></div>
                     </div>
-                    
+
                     <div class="relative">
-                        <div class="text-3xl md:text-4xl font-bold text-[#154461] mb-2 stat-counter" id="projectsDone">0</div>
+                        <div class="text-3xl md:text-4xl font-bold text-[#154461] mb-2 stat-counter" id="projectsDone">0
+                        </div>
                         <div class="text-gray-600 text-sm">مشروع منجز</div>
-                        <div class="absolute -top-2 -right-2 w-4 h-4 rounded-full bg-green-400 pulse-dot" style="animation-delay: 0.5s;"></div>
+                        <div class="absolute -top-2 -right-2 w-4 h-4 rounded-full bg-green-400 pulse-dot"
+                            style="animation-delay: 0.5s;"></div>
                     </div>
-                    
+
                     <div class="relative">
-                        <div class="text-3xl md:text-4xl font-bold text-[#154461] mb-2 stat-counter" id="coverageAreas">0</div>
+                        <div class="text-3xl md:text-4xl font-bold text-[#154461] mb-2 stat-counter" id="coverageAreas">
+                            0</div>
                         <div class="text-gray-600 text-sm">حي في الرياض</div>
-                        <div class="absolute -top-2 -right-2 w-4 h-4 rounded-full bg-green-400 pulse-dot" style="animation-delay: 1s;"></div>
+                        <div class="absolute -top-2 -right-2 w-4 h-4 rounded-full bg-green-400 pulse-dot"
+                            style="animation-delay: 1s;"></div>
                     </div>
-                    
+
                     <div class="relative">
                         <div class="text-3xl md:text-4xl font-bold text-[#154461] mb-2">24/7</div>
                         <div class="text-gray-600 text-sm">خدمة عملاء</div>
-                        <div class="absolute -top-2 -right-2 w-4 h-4 rounded-full bg-green-400 pulse-dot" style="animation-delay: 1.5s;"></div>
+                        <div class="absolute -top-2 -right-2 w-4 h-4 rounded-full bg-green-400 pulse-dot"
+                            style="animation-delay: 1.5s;"></div>
                     </div>
-                    
+
                 </div>
             </div>
 
             <!-- قسم الدعوة للإجراء -->
             <div class="text-center mt-12">
-                <button class="bg-[#154461] hover:bg-[#154461] text-white font-bold py-4 px-8 rounded-2xl text-lg transition duration-300 transform hover:scale-105 inline-flex items-center gap-3">
+                <button
+                    class="bg-[#154461] hover:bg-[#154461] text-white font-bold py-4 px-8 rounded-2xl text-lg transition duration-300 transform hover:scale-105 inline-flex items-center gap-3">
                     <i class="fas fa-sparkles"></i>
                     احصل على تنظيفك المجاني الأول
                     <i class="fas fa-arrow-left"></i>
@@ -1490,14 +1804,14 @@
                 { element: 'projectsDone', target: 890 },
                 { element: 'coverageAreas', target: 45 }
             ];
-            
+
             counters.forEach(counter => {
                 const element = document.getElementById(counter.element);
                 let count = 0;
                 const target = counter.target;
                 const duration = 2000;
                 const increment = target / (duration / 16);
-                
+
                 const timer = setInterval(() => {
                     count += increment;
                     if (count >= target) {
@@ -1508,7 +1822,7 @@
                 }, 16);
             });
         }
-        
+
         // بدء العدادات عند التمرير إلى القسم
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -1518,47 +1832,633 @@
                 }
             });
         });
-        
+
         observer.observe(document.querySelector('.gradient-bg'));
-        
+
         // تأثيرات التفاعل مع البطاقات
         document.querySelectorAll('.feature-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
+            card.addEventListener('mouseenter', function () {
                 this.style.transform = 'translateY(-5px)';
             });
-            
-            card.addEventListener('mouseleave', function() {
+
+            card.addEventListener('mouseleave', function () {
                 this.style.transform = 'translateY(0)';
             });
         });
-        
+
         // إنشاء أوراق متساقطة إضافية
         function createFallingLeaves() {
             const container = document.querySelector('.absolute.inset-0.overflow-hidden');
             const leavesCount = 3;
-            
+
             for (let i = 0; i < leavesCount; i++) {
                 const leaf = document.createElement('div');
                 leaf.className = 'leaf-fall absolute text-green-300';
-                
+
                 // أحجام عشوائية
                 const size = Math.random() * 2 + 1;
                 leaf.style.fontSize = `${size}rem`;
-                
+
                 // مواقع عشوائية
                 leaf.style.left = `${Math.random() * 100}%`;
                 leaf.style.top = `-50px`;
-                
+
                 // توقيت عشوائي
                 leaf.style.animationDelay = `${Math.random() * 8}s`;
-                
+
                 leaf.innerHTML = '<i class="fas fa-leaf"></i>';
                 container.appendChild(leaf);
             }
         }
-        
+
         // بدء إنشاء الأوراق عند تحميل الصفحة
         document.addEventListener('DOMContentLoaded', createFallingLeaves);
+    </script>
+
+    <section class="bg-[#faf8f5] py-16 px-4 md:px-8 lg:px-16 relative overflow-hidden">
+
+        <!-- العناصر المتحركة في الخلفية -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="leaf-float absolute top-20 left-20 text-[#154461] text-4xl">
+                <i class="fas fa-leaf"></i>
+            </div>
+            <div class="leaf-float absolute top-40 right-40 text-[#154461] text-3xl" style="animation-delay: 1s;">
+                <i class="fas fa-spa"></i>
+            </div>
+            <div class="leaf-float absolute bottom-20 left-40 text-[#154461] text-5xl" style="animation-delay: 2s;">
+                <i class="fas fa-wind"></i>
+            </div>
+            <div class="leaf-float absolute bottom-40 right-20 text-[#154461] text-2xl" style="animation-delay: 3s;">
+                <i class="fas fa-seedling"></i>
+            </div>
+        </div>
+
+        <!-- الخط الفاصل العلوي -->
+        <div class="separator-line absolute top-0 left-0 w-full"></div>
+
+        <div class="max-w-6xl mx-auto relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+                <!-- المحتوى النصي -->
+                <div class="text-center lg:text-right">
+                    <div
+                        class="inline-flex items-center gap-3 bg-green-100 text-[#154461] font-bold py-2 px-6 rounded-full text-sm mb-6">
+                        <div class="w-2 h-2 rounded-full bg-[#154461] pulse-dot"></div>
+                        <span>اتصل بنا الآن</span>
+                    </div>
+
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+                        <span class="block">مستعدون لخدمتك</span>
+                        <span class="text-[#154461]">على مدار الساعة</span>
+                    </h2>
+
+                    <p class="text-xl text-gray-700 mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                        فريق فريش كلين متاح دائماً لتلبية احتياجاتك في التنظيف.
+                        تواصل معنا الآن واحصل على أفضل الخدمات بأعلى معايير الجودة.
+                    </p>
+
+                    <!-- بطاقات المعلومات -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                        <div class="contact-card rounded-2xl p-4 text-center">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-[#154461] flex items-center justify-center text-white text-lg mx-auto mb-3 icon-glow">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="text-[#154461] font-bold text-lg">24/7</div>
+                            <div class="text-gray-600 text-sm">خدمة متاحة</div>
+                        </div>
+
+                        <div class="contact-card rounded-2xl p-4 text-center">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-[#154461] flex items-center justify-center text-white text-lg mx-auto mb-3 icon-glow">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <div class="text-[#154461] font-bold text-lg">30 دقيقة</div>
+                            <div class="text-gray-600 text-sm">متوسط الوصول</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- قسم الأزرار والاتصال -->
+                <div class="text-center lg:text-right">
+                    <div class="relative">
+                        <!-- الأيقونة العائمة -->
+                        <div class="floating-icon mb-8">
+                            <div
+                                class="w-20 h-20 rounded-2xl bg-[#154461] flex items-center justify-center text-white text-2xl mx-auto lg:mx-0 lg:ml-auto icon-glow">
+                                <i class="fas fa-headset"></i>
+                            </div>
+                        </div>
+
+                        <!-- أزرار الاتصال الرئيسية -->
+                        <div class="space-y-4 max-w-sm mx-auto lg:mx-0 lg:ml-auto">
+                            <!-- زر واتساب -->
+                            <a href="https://wa.me/966123456789"
+                                class="btn-whatsapp text-white font-bold py-4 px-6 rounded-2xl text-lg w-full block transition duration-300">
+                                <div class="flex items-center justify-center gap-3">
+                                    <i class="fab fa-whatsapp text-xl"></i>
+                                    <span>تواصل عبر واتساب</span>
+                                </div>
+                                <div class="text-white text-opacity-90 text-sm mt-1">
+                                    رد فوري خلال دقائق
+                                </div>
+                            </a>
+
+                            <!-- زر الاتصال -->
+                            <a href="tel:920012345"
+                                class="btn-call text-white font-bold py-4 px-6 rounded-2xl text-lg w-full block transition duration-300">
+                                <div class="flex items-center justify-center gap-3">
+                                    <i class="fas fa-phone-alt text-xl"></i>
+                                    <span>اتصل بنا الآن</span>
+                                </div>
+                                <div class="text-white text-opacity-90 text-sm mt-1">
+                                    9200 12345
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- العروض الخاصة -->
+                        <div class="mt-8 bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
+                            <div class="flex items-center gap-3 justify-center">
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-[#154461] flex items-center justify-center text-white text-lg">
+                                    <i class="fas fa-gift"></i>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-[#154461] font-bold text-lg">عرض خاص</div>
+                                    <div class="text-gray-600 text-sm">خصم 25% على أول تنظيف</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- معلومات الاتصال الإضافية -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 pt-8 border-t border-gray-200">
+                <div class="text-center">
+                    <div class="text-[#154461] text-2xl mb-2">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="text-gray-900 font-bold">جميع أحياء الرياض</div>
+                    <div class="text-gray-600 text-sm">تغطية شاملة</div>
+                </div>
+
+                <div class="text-center">
+                    <div class="text-[#154461] text-2xl mb-2">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="text-gray-900 font-bold">ضمان الجودة</div>
+                    <div class="text-gray-600 text-sm">رضاك مضمون</div>
+                </div>
+
+                <div class="text-center">
+                    <div class="text-[#154461] text-2xl mb-2">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="text-gray-900 font-bold">فريق معتمد</div>
+                    <div class="text-gray-600 text-sm">خبراء محترفون</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- الخط الفاصل السفلي -->
+        <div class="separator-line absolute bottom-0 left-0 w-full"></div>
+
+        <!-- وسائل التواصل الاجتماعي -->
+        <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex gap-4">
+            <a href="#"
+                class="w-10 h-10 rounded-full bg-white shadow-lg flex items-center justify-center text-[#154461] hover:bg-green-50 transition duration-300">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#"
+                class="w-10 h-10 rounded-full bg-white shadow-lg flex items-center justify-center text-[#154461] hover:bg-green-50 transition duration-300">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#"
+                class="w-10 h-10 rounded-full bg-white shadow-lg flex items-center justify-center text-[#154461] hover:bg-green-50 transition duration-300">
+                <i class="fab fa-tiktok"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- سكريبت التأثيرات -->
+    <script>
+        // تأثير النقر على الأزرار
+        document.querySelectorAll('a').forEach(button => {
+            button.addEventListener('click', function () {
+                this.style.transform = 'scale(0.98)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 150);
+            });
+        });
+
+        // إنشاء أوراق متساقطة إضافية
+        function createFallingLeaves() {
+            const container = document.querySelector('.absolute.inset-0.overflow-hidden');
+            const leavesCount = 6;
+
+            for (let i = 0; i < leavesCount; i++) {
+                const leaf = document.createElement('div');
+                leaf.className = 'leaf-float absolute text-[#154461]';
+
+                // أحجام عشوائية
+                const size = Math.random() * 2 + 1;
+                leaf.style.fontSize = `${size}rem`;
+
+                // مواقع عشوائية
+                leaf.style.left = `${Math.random() * 100}%`;
+                leaf.style.top = `${Math.random() * 100}%`;
+
+                // توقيت عشوائي
+                leaf.style.animationDelay = `${Math.random() * 8}s`;
+
+                // أيقونات عشوائية
+                const icons = ['fa-leaf', 'fa-spa', 'fa-wind', 'fa-seedling', 'fa-feather'];
+                const randomIcon = icons[Math.floor(Math.random() * icons.length)];
+                leaf.innerHTML = `<i class="fas ${randomIcon}"></i>`;
+
+                container.appendChild(leaf);
+            }
+        }
+
+        // بدء إنشاء الأوراق عند تحميل الصفحة
+        document.addEventListener('DOMContentLoaded', createFallingLeaves);
+    </script>
+
+
+    <!-- قسم الأسئلة الشائعة مع آراء العملاء -->
+    <section class="py-20 px-4 md:px-8 lg:px-16 gradient-bg relative overflow-hidden">
+
+        <!-- العناصر المتحركة في الخلفية -->
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="floating-element absolute top-20 left-20 text-[#154461] text-6xl">
+                <i class="fas fa-question-circle"></i>
+            </div>
+            <div class="floating-element absolute top-40 right-40 text-[#154461] text-4xl" style="animation-delay: 1s;">
+                <i class="fas fa-comments"></i>
+            </div>
+            <div class="floating-element absolute bottom-20 left-40 text-[#154461] text-5xl"
+                style="animation-delay: 2s;">
+                <i class="fas fa-star"></i>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto relative z-10">
+
+            <!-- العنوان الرئيسي -->
+            <div class="text-center mb-16">
+                <span class="inline-block bg-[#154461] text-white font-bold py-2 px-6 rounded-full text-sm mb-4">
+                    <i class="fas fa-headset ml-2"></i>
+                    الدعم والاستفسارات
+                </span>
+
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                    <span class="text-[#154461]">أسئلتكم</span>
+                    تهمنا وآراؤكم
+                    <span class="text-[#154461]">تشرفنا</span>
+                </h2>
+
+                <p class="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+                    نجيب على جميع استفساراتكم ونسعد بسماع آرائكم. فريق فريش كلين دائماً هنا لخدمتكم
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+
+                <!-- قسم الأسئلة الشائعة -->
+                <div>
+                    <div class="flex items-center gap-3 mb-8">
+                        <div
+                            class="question-mark w-12 h-12 rounded-2xl bg-[#154461] flex items-center justify-center text-white text-xl">
+                            <i class="fas fa-question"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900">الأسئلة الشائعة</h3>
+                    </div>
+
+                    <div class="space-y-4">
+
+                        <!-- سؤال 1 -->
+                        <div class="faq-card rounded-2xl p-6 cursor-pointer" onclick="toggleFAQ(1)">
+                            <div class="flex items-center justify-between">
+                                <h4 class="text-lg font-bold text-gray-900">
+                                    ما هي مدة خدمة التنظيف العادية؟
+                                </h4>
+                                <div class="accordion-icon text-[#154461] text-xl">
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                            </div>
+                            <div class="accordion-content mt-4">
+                                <p class="text-gray-600 leading-relaxed">
+                                    مدة الخدمة تختلف حسب حجم المساحة ونوع الخدمة. في المتوسط:
+                                    <br>• الشقة (3 غرف): 3-4 ساعات
+                                    <br>• الفيلا: 5-7 ساعات
+                                    <br>• المكاتب: حسب المساحة
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- سؤال 2 -->
+                        <div class="faq-card rounded-2xl p-6 cursor-pointer" onclick="toggleFAQ(2)">
+                            <div class="flex items-center justify-between">
+                                <h4 class="text-lg font-bold text-gray-900">
+                                    هل تستخدمون مواد تنظيف آمنة؟
+                                </h4>
+                                <div class="accordion-icon text-[#154461] text-xl">
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                            </div>
+                            <div class="accordion-content mt-4">
+                                <p class="text-gray-600 leading-relaxed">
+                                    نعم! نستخدم فقط منظفات صديقة للبيئة ومعتمدة من الهيئة العامة للغذاء والدواء.
+                                    جميع منتجاتنا آمنة للأطفال والحيوانات الأليفة ولا تسبب الحساسية.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- سؤال 3 -->
+                        <div class="faq-card rounded-2xl p-6 cursor-pointer" onclick="toggleFAQ(3)">
+                            <div class="flex items-center justify-between">
+                                <h4 class="text-lg font-bold text-gray-900">
+                                    كيف يمكنني حجز خدمة التنظيف؟
+                                </h4>
+                                <div class="accordion-icon text-[#154461] text-xl">
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                            </div>
+                            <div class="accordion-content mt-4">
+                                <p class="text-gray-600 leading-relaxed">
+                                    يمكنك الحجز بعدة طرق:
+                                    <br>• عبر التطبيق: حمّل تطبيق فريش كلين
+                                    <br>• عبر الهاتف: 9200 12345
+                                    <br>• عبر الموقع: املأ نموذج الحجز
+                                    <br>• خدمة العملاء: على مدار 24 ساعة
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- سؤال 4 -->
+                        <div class="faq-card rounded-2xl p-6 cursor-pointer" onclick="toggleFAQ(4)">
+                            <div class="flex items-center justify-between">
+                                <h4 class="text-lg font-bold text-gray-900">
+                                    هل تغطون جميع أحياء الرياض؟
+                                </h4>
+                                <div class="accordion-icon text-[#154461] text-xl">
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                            </div>
+                            <div class="accordion-content mt-4">
+                                <p class="text-gray-600 leading-relaxed">
+                                    نعم! نحن نغطي جميع أحياء الرياض بما في ذلك:
+                                    <br>• Northern Riyadh: العليا، النخيل، الصحافة
+                                    <br>• Southern Riyadh: الملز، البطحاء، منفوحة
+                                    <br>• Eastern Riyadh: العريجا، اليرموك، النظيم
+                                    <br>• Western Riyadh: الشفا، طويق، ظهرة لبن
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- سؤال 5 -->
+                        <div class="faq-card rounded-2xl p-6 cursor-pointer" onclick="toggleFAQ(5)">
+                            <div class="flex items-center justify-between">
+                                <h4 class="text-lg font-bold text-gray-900">
+                                    ماذا يحدث إذا لم أكن راضياً عن الخدمة؟
+                                </h4>
+                                <div class="accordion-icon text-[#154461] text-xl">
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                            </div>
+                            <div class="accordion-content mt-4">
+                                <p class="text-gray-600 leading-relaxed">
+                                    نضمن رضاك 100%! إذا لم تكن راضياً عن الخدمة:
+                                    <br>• نعيد التنظيف مجاناً في خلال 24 ساعة
+                                    <br>• استرداد كامل للمبلغ المدفوع
+                                    <br>• تقييم مجاني لمعرفة أسباب عدم الرضا
+                                    <br>• تحسينات فورية في الخدمة
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- زر الأسئلة الإضافية -->
+                    <div class="text-center mt-8">
+                        <button
+                            class="bg-[#154461] hover:bg-[#154461] text-white font-bold py-3 px-6 rounded-2xl transition duration-300 inline-flex items-center gap-2">
+                            <i class="fas fa-question-circle"></i>
+                            لديك سؤال آخر؟
+                            <i class="fas fa-arrow-left"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- قسم آراء العملاء -->
+                <div>
+                    <div class="flex items-center gap-3 mb-8">
+                        <div
+                            class="fresh-badge w-12 h-12 rounded-2xl flex items-center justify-center text-white text-xl">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900">آراء عملائنا الكرام</h3>
+                    </div>
+
+                    <div class="space-y-6">
+
+                        <!-- رأي 1 -->
+                        <div class="testimonial-card rounded-2xl p-6">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div
+                                    class="client-avatar rounded-full overflow-hidden bg-green-100 flex items-center justify-center">
+                                    <span class="text-[#154461] font-bold text-xl">أ</span>
+                                </div>
+                                <div class="text-right flex-1">
+                                    <h4 class="font-bold text-gray-900 text-lg">أحمد السديس</h4>
+                                    <p class="text-[#154461] text-sm">حي النخيل</p>
+                                    <div class="rating-stars mt-1">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="relative">
+                                <i
+                                    class="fas fa-quote-right text-[#154461] opacity-10 text-4xl absolute -top-2 -right-2"></i>
+                                <p class="text-gray-700 leading-relaxed text-right">
+                                    خدمة ممتازة جداً! الفريق محترف والأسعار معقولة. نظافة شاملة ودقيقة.
+                                    أوصي بفريش كلين لكل من يبحث عن جودة واحترافية.
+                                </p>
+                            </div>
+                            <div class="flex items-center justify-between mt-4">
+                                <div class="text-[#154461] text-sm font-bold">
+                                    تنظيف فيلا
+                                </div>
+                                <div class="text-gray-500 text-sm">
+                                    منذ 3 أيام
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- رأي 2 -->
+                        <div class="testimonial-card rounded-2xl p-6">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div
+                                    class="client-avatar rounded-full overflow-hidden bg-blue-100 flex items-center justify-center">
+                                    <span class="text-blue-600 font-bold text-xl">ن</span>
+                                </div>
+                                <div class="text-right flex-1">
+                                    <h4 class="font-bold text-gray-900 text-lg">نورة الفهد</h4>
+                                    <p class="text-[#154461] text-sm">حي العليا</p>
+                                    <div class="rating-stars mt-1">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="relative">
+                                <i
+                                    class="fas fa-quote-right text-[#154461] opacity-10 text-4xl absolute -top-2 -right-2"></i>
+                                <p class="text-gray-700 leading-relaxed text-right">
+                                    جربت عدة شركات نظافة ولكن فريش كلين مختلف تماماً.
+                                    الاهتمام بالتفاصيل واستخدام مواد آمنة جعلني أواصل معهم.
+                                </p>
+                            </div>
+                            <div class="flex items-center justify-between mt-4">
+                                <div class="text-[#154461] text-sm font-bold">
+                                    تنظيف شقة
+                                </div>
+                                <div class="text-gray-500 text-sm">
+                                    منذ أسبوع
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- رأي 3 -->
+                        <div class="testimonial-card rounded-2xl p-6">
+                            <div class="flex items-center gap-4 mb-4">
+                                <div
+                                    class="client-avatar rounded-full overflow-hidden bg-purple-100 flex items-center justify-center">
+                                    <span class="text-purple-600 font-bold text-xl">م</span>
+                                </div>
+                                <div class="text-right flex-1">
+                                    <h4 class="font-bold text-gray-900 text-lg">محمد القحطاني</h4>
+                                    <p class="text-[#154461] text-sm">حي العريجا</p>
+                                    <div class="rating-stars mt-1">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="relative">
+                                <i
+                                    class="fas fa-quote-right text-[#154461] opacity-10 text-4xl absolute -top-2 -right-2"></i>
+                                <p class="text-gray-700 leading-relaxed text-right">
+                                    خدمة تنظيف المكاتب كانت استثنائية. الفريق يعمل باحترافية عالية
+                                    ولا يتعارض مع سير العمل. الأسعار تنافسية والجودة ممتازة.
+                                </p>
+                            </div>
+                            <div class="flex items-center justify-between mt-4">
+                                <div class="text-[#154461] text-sm font-bold">
+                                    تنظيف مكاتب
+                                </div>
+                                <div class="text-gray-500 text-sm">
+                                    منذ يومين
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- إحصائيات سريعة -->
+                    <div class="bg-white rounded-2xl p-6 mt-8 shadow-lg">
+                        <div class="grid grid-cols-3 gap-4 text-center">
+                            <div>
+                                <div class="text-2xl font-bold text-[#154461]">٤.٩</div>
+                                <div class="text-gray-600 text-sm">التقييم العام</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-bold text-[#154461]">٩٨٪</div>
+                                <div class="text-gray-600 text-sm">عملاء راضون</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-bold text-[#154461]">٥٤٧</div>
+                                <div class="text-gray-600 text-sm">تقييم هذا الشهر</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- قسم الاتصال السريع -->
+            <div class="bg-white rounded-3xl p-8 mt-16 shadow-lg text-center">
+                <h3 class="text-2xl font-bold text-gray-900 mb-4">لا تجد إجابة لسؤالك؟</h3>
+                <p class="text-gray-600 mb-6">فريق الدعم الفني لدينا مستعد للإجابة على جميع استفساراتك على مدار 24 ساعة
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button
+                        class="bg-[#154461] hover:bg-[[#154461] text-white font-bold py-3 px-8 rounded-2xl transition duration-300 inline-flex items-center gap-2">
+                        <i class="fab fa-whatsapp"></i>
+                        تواصل عبر واتساب
+                    </button>
+                    <button
+                        class="border-2 border-[#154461] text-[#154461] hover:bg-[#154461] hover:text-white font-bold py-3 px-8 rounded-2xl transition duration-300 inline-flex items-center gap-2">
+                        <i class="fas fa-phone"></i>
+                        9200 12345
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- سكريبت الأسئلة الشائعة -->
+    <script>
+        // فتح وإغلاق الأسئلة الشائعة
+        function toggleFAQ(number) {
+            const faq = document.querySelectorAll('.faq-card')[number - 1];
+            const content = faq.querySelector('.accordion-content');
+            const icon = faq.querySelector('.accordion-icon');
+
+            // إغلاق جميع الأسئلة الأخرى
+            document.querySelectorAll('.faq-card').forEach((card, index) => {
+                if (index !== number - 1) {
+                    card.classList.remove('active');
+                    card.querySelector('.accordion-content').classList.remove('open');
+                    card.querySelector('.accordion-icon').classList.remove('rotated');
+                }
+            });
+
+            // تبديل السؤال الحالي
+            faq.classList.toggle('active');
+            content.classList.toggle('open');
+            icon.classList.toggle('rotated');
+        }
+
+        // فتح أول سؤال افتراضياً
+        document.addEventListener('DOMContentLoaded', function () {
+            toggleFAQ(1);
+        });
+
+        // تأثيرات التفاعل مع البطاقات
+        document.querySelectorAll('.testimonial-card').forEach(card => {
+            card.addEventListener('mouseenter', function () {
+                this.style.transform = 'translateY(-5px)';
+            });
+
+            card.addEventListener('mouseleave', function () {
+                this.style.transform = 'translateY(0)';
+            });
+        });
     </script>
 
 
@@ -1608,7 +2508,7 @@
                         </a>
                     </div>
 
-                 
+
                 </div>
 
                 <!-- روابط سريعة -->
@@ -1630,7 +2530,7 @@
                                 <i class="fas fa-chev-left text-xs text-[#33abde]"></i>
                                 خدماتنا
                             </a></li>
-                       
+
                         <li><a href="#" class="footer-link text-green-100 hover:text-white flex items-center gap-2">
                                 <i class="fas fa-chev-left text-xs text-[#33abde]"></i>
                                 اتصل بنا
@@ -1657,7 +2557,7 @@
                         </div>
                     </form>
 
-                 
+
                 </div>
             </div>
 
@@ -1674,7 +2574,7 @@
                                 <i class="fas fa-phone text-[#33abde]"></i>
                             </div>
                             <div>
-                                <div class="text-green-200 text-sm">اتصل بنا</div>
+                                <div class="text-[#154461] text-sm">اتصل بنا</div>
                                 <div class="font-bold">+966 12 345 6789</div>
                             </div>
                         </div>
@@ -1684,7 +2584,7 @@
                                 <i class="fas fa-envelope text-[#33abde]"></i>
                             </div>
                             <div>
-                                <div class="text-green-200 text-sm">البريد الإلكتروني</div>
+                                <div class="text-[#154461] text-sm">البريد الإلكتروني</div>
                                 <div class="font-bold">info@كلين .com</div>
                             </div>
                         </div>
@@ -1697,7 +2597,7 @@
                                 <i class="fas fa-clock text-[#33abde]"></i>
                             </div>
                             <div>
-                                <div class="text-green-200 text-sm">أوقات العمل</div>
+                                <div class="text-[#154461] text-sm">أوقات العمل</div>
                                 <div class="font-bold">24/7 على مدار الساعة</div>
                             </div>
                         </div>
@@ -1707,8 +2607,8 @@
                                 <i class="fas fa-map-marker-alt text-[#33abde]"></i>
                             </div>
                             <div>
-                                <div class="text-green-200 text-sm">الموقع</div>
-                                <div class="font-bold">جدة، المملكة العربية السعودية</div>
+                                <div class="text-[#154461] text-sm">الموقع</div>
+                                <div class="font-bold">الرياض، المملكة العربية السعودية</div>
                             </div>
                         </div>
                     </div>
@@ -1719,30 +2619,30 @@
                             <div class="bg-white bg-opacity-20 rounded-2xl p-4 inline-block floating-badge">
                                 <i class="fas fa-award text-2xl text-[#33abde]"></i>
                             </div>
-                            <div class="text-green-200 text-sm mt-2">جودة معتمدة</div>
+                            <div class="text-[#154461] text-sm mt-2">جودة معتمدة</div>
                         </div>
                         <div class="text-center">
                             <div class="bg-white bg-opacity-20 rounded-2xl p-4 inline-block floating-badge">
                                 <i class="fas fa-shield-alt text-2xl text-[#33abde]"></i>
                             </div>
-                            <div class="text-green-200 text-sm mt-2">موثوق وآمن</div>
+                            <div class="text-[#154461] text-sm mt-2">موثوق وآمن</div>
                         </div>
                     </div>
                 </div>
 
                 <!-- القسم السفلي -->
                 <div class="flex flex-col md:flex-row justify-between items-center gap-4 pt-6 border-t footer-divider">
-                    <div class="text-green-200 text-sm">
+                    <div class="text-[#154461] text-sm">
                         © 2024 كلين . جميع الحقوق محفوظة.
                     </div>
 
-                    <div class="flex gap-6 text-green-200 text-sm">
+                    <div class="flex gap-6 text-[#154461] text-sm">
                         <a href="#" class="hover:text-white transition duration-300">سياسة الخصوصية</a>
                         <a href="#" class="hover:text-white transition duration-300">شروط الخدمة</a>
                         <a href="#" class="hover:text-white transition duration-300">سياسة الاسترجاع</a>
                     </div>
 
-                    <div class="flex items-center gap-2 text-green-200 text-sm">
+                    <div class="flex items-center gap-2 text-[#154461] text-sm">
                         <span>صنع بـ</span>
                         <i class="fas fa-heart text-[#33abde]"></i>
                         <span>في المملكة العربية السعودية</span>
