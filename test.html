@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جميع المقالات - ايجبت للدعاية والإعلان</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&display=swap');
+        
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: #f8fafc;
+        }
+        
+        /* ألوان الموقع */
+        .bg-primary {
+            background-color: #154461;
+        }
+        
+        .text-primary {
+            color: #154461;
+        }
+        
+        .text-secondary {
+            color: #33abde;
+        }
+        
+        /* هيدر الصفحة */
+        .page-header {
+            background: linear-gradient(135deg, #154461 0%, #0d2c40 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 50px;
+        }
+        
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+        }
+        
+        /* شبكة المقالات */
+        .articles-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 60px;
+        }
+        
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        /* كارد المقال */
+        .article-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .article-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        /* صورة المقال */
+        .article-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        
+        .article-card:hover .article-img {
+            transform: scale(1.05);
+        }
+        
+        /* محتوى المقال */
+        .article-content {
+            padding: 25px;
+        }
+        
+        /* شارة التصنيف */
+        .article-category {
+            display: inline-block;
+            background: #33abde;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        /* عنوان المقال */
+        .article-title {
+            color: #154461;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+        
+        .article-title:hover {
+            color: #0d2c40;
+        }
+        
+        /* ملخص المقال */
+        .article-excerpt {
+            color: #4a5568;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        /* معلومات المقال */
+        .article-meta {
+            display: flex;
+            align-items: center;
+            color: #718096;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+        
+        .article-meta i {
+            margin-left: 5px;
+        }
+        
+        /* زر قراءة المزيد */
+        .read-more-btn {
+            display: inline-block;
+            background: #154461;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .read-more-btn:hover {
+            background: #0d2c40;
+            transform: translateX(-5px);
+            box-shadow: 0 5px 15px rgba(21, 68, 97, 0.3);
+        }
+        
+        /* ترقيم الصفحات */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 50px;
+        }
+        
+        .page-number {
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: white;
+            color: #4a5568;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+        
+        .page-number:hover, .page-number.active {
+            background: #154461;
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        /* زر العودة */
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: #154461;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .back-btn:hover {
+            color: #0d2c40;
+            transform: translateX(-5px);
+        }
+        
+        /* تحسينات للجوال */
+        @media (max-width: 768px) {
+            .articles-grid {
+                grid-template-columns: 1fr;
+                padding: 0 15px;
+            }
+            
+            .page-header {
+                padding: 60px 15px;
+            }
+            
+            .article-img {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- هيدر الصفحة -->
+    <header class="page-header">
+        <div style="position: relative; z-index: 1;">
+            <h1 style="font-size: 2.8rem; font-weight: 800; margin-bottom: 15px;">المدونة</h1>
+            <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto; opacity: 0.9;">
+                اكتشف مكتبتنا الكاملة من المقالات التسويقية والإعلانية المخصصة لسوق جدة
+            </p>
+        </div>
+    </header>
+    
+    <!-- محتوى الصفحة -->
+    <main class="articles-container">
+        <!-- شبكة المقالات -->
+        <div class="articles-grid">
+            <!-- مقال 1 -->
+            <article class="article-card">
+                <img src="../assets/img/blog/digital-marketing-trends.webp" 
+                     alt="اتجاهات التسويق الرقمي 2024" 
+                     class="article-img">
+                <div class="article-content">
+                    <span class="article-category">تسويق رقمي</span>
+                    <h2 class="article-title">
+                        <a href="digital-marketing-trends-2024/index.html" style="color: inherit; text-decoration: none;">
+                            أهم اتجاهات التسويق الرقمي التي يجب أن تتبناها في 2024
+                        </a>
+                    </h2>
+                    <p class="article-excerpt">
+                        مع تطور التكنولوجيا وتغير سلوك المستهلكين، تظهر اتجاهات جديدة في التسويق الرقمي. في هذا المقال نستعرض أهم هذه الاتجاهات وكيف يمكنك الاستفادة منها لتعزيز وجودك الرقمي وجذب المزيد من العملاء في جدة.
+                    </p>
+                    <div class="article-meta">
+                        <span><i class="fas fa-calendar-alt"></i> 15 مارس 2024</span>
+                        <span style="margin: 0 15px;">|</span>
+                        <span><i class="fas fa-clock"></i> 8 دقائق قراءة</span>
+                    </div>
+                    <a href="digital-marketing-trends-2024/index.html" class="read-more-btn">
+                        <i class="fas fa-arrow-left" style="margin-right: 8px;"></i>
+                        قراءة المقال
+                    </a>
+                </div>
+            </article>
+            
+            <!-- مقال 2 -->
+            <article class="article-card">
+                <img src="../assets/img/blog/seo-strategies.webp" 
+                     alt="استراتيجيات SEO في جدة" 
+                     class="article-img">
+                <div class="article-content">
+                    <span class="article-category">تحسين محركات البحث</span>
+                    <h2 class="article-title">
+                        <a href="seo-strategies-2024/index.html" style="color: inherit; text-decoration: none;">
+                            أفضل استراتيجيات SEO للشركات في جدة 2024
+                        </a>
+                    </h2>
+                    <p class="article-excerpt">
+                        تعرف على أحدث استراتيجيات تحسين محركات البحث (SEO) المخصصة لسوق جدة. دليل عملي لتحسين ظهور موقعك في نتائج جوجل وجذب عملاء محليين جدد لزيادة مبيعاتك.
+                    </p>
+                    <div class="article-meta">
+                        <span><i class="fas fa-calendar-alt"></i> 10 مارس 2024</span>
+                        <span style="margin: 0 15px;">|</span>
+                        <span><i class="fas fa-clock"></i> 6 دقائق قراءة</span>
+                    </div>
+                    <a href="seo-strategies-2024/index.html" class="read-more-btn">
+                        <i class="fas fa-arrow-left" style="margin-right: 8px;"></i>
+                        قراءة المقال
+                    </a>
+                </div>
+            </article>
+            
+            <!-- مقال 3 -->
+            <article class="article-card">
+                <img src="../assets/img/blog/social-media-ads.webp" 
+                     alt="إعلانات السوشيال ميديا" 
+                     class="article-img">
+                <div class="article-content">
+                    <span class="article-category">التسويق عبر السوشيال ميديا</span>
+                    <h2 class="article-title">
+                        <a href="social-media-ads-tips/index.html" style="color: inherit; text-decoration: none;">
+                            دليل إعلانات السوشيال ميديا للشركات في جدة
+                        </a>
+                    </h2>
+                    <p class="article-excerpt">
+                        كيف تحقق أقصى عائد من إعلانات السوشيال ميديا بميزانية محدودة؟ نكشف عن أسرار تصميم وإدارة حملات إعلانية ناجحة على منصات التواصل الاجتماعي المختلفة في جدة.
+                    </p>
+                    <div class="article-meta">
+                        <span><i class="fas fa-calendar-alt"></i> 5 مارس 2024</span>
+                        <span style="margin: 0 15px;">|</span>
+                        <span><i class="fas fa-clock"></i> 7 دقائق قراءة</span>
+                    </div>
+                    <a href="social-media-ads-tips/index.html" class="read-more-btn">
+                        <i class="fas fa-arrow-left" style="margin-right: 8px;"></i>
+                        قراءة المقال
+                    </a>
+                </div>
+            </article>
+            
+            <!-- مقال 4 -->
+            <article class="article-card">
+                <img src="../assets/img/blog/logo-design-guide.webp" 
+                     alt="تصميم الهوية البصرية" 
+                     class="article-img">
+                <div class="article-content">
+                    <span class="article-category">تصميم الهوية البصرية</span>
+                    <h2 class="article-title">
+                        <a href="logo-design-complete-guide/index.html" style="color: inherit; text-decoration: none;">
+                            دليل تصميم شعار قوي يلتصق بذاكرة العملاء
+                        </a>
+                    </h2>
+                    <p class="article-excerpt">
+                        الشعار ليس مجرد رمز، بل هو هوية العلامة التجارية. نقدم في هذا المقال خطوات عملية لتصميم شعار احترافي يعبر عن قيم عملك ويترك انطباعاً قوياً لدى عملائك.
+                    </p>
+                    <div class="article-meta">
+                        <span><i class="fas fa-calendar-alt"></i> 28 فبراير 2024</span>
+                        <span style="margin: 0 15px;">|</span>
+                        <span><i class="fas fa-clock"></i> 5 دقائق قراءة</span>
+                    </div>
+                    <a href="logo-design-complete-guide/index.html" class="read-more-btn">
+                        <i class="fas fa-arrow-left" style="margin-right: 8px;"></i>
+                        قراءة المقال
+                    </a>
+                </div>
+            </article>
+            
+            <!-- مقال 5 -->
+            <article class="article-card">
+                <img src="../assets/img/blog/brand-storytelling.webp" 
+                     alt="سرد القصص للعلامات التجارية" 
+                     class="article-img">
+                <div class="article-content">
+                    <span class="article-category">العلامة التجارية</span>
+                    <h2 class="article-title">
+                        <a href="brand-storytelling-guide/index.html" style="color: inherit; text-decoration: none;">
+                            فن سرد القصص: كيف تجعل علامتك التجارية لا تُنسى؟
+                        </a>
+                    </h2>
+                    <p class="article-excerpt">
+                        القصة الجيدة تخلق ارتباطاً عاطفياً مع الجمهور. نتعمق في عالم سرد القصص للعلامات التجارية، وكيف يمكنك استخدام هذه التقنية لبناء علاقة متينة مع عملائك.
+                    </p>
+                    <div class="article-meta">
+                        <span><i class="fas fa-calendar-alt"></i> 22 فبراير 2024</span>
+                        <span style="margin: 0 15px;">|</span>
+                        <span><i class="fas fa-clock"></i> 9 دقائق قراءة</span>
+                    </div>
+                    <a href="brand-storytelling-guide/index.html" class="read-more-btn">
+                        <i class="fas fa-arrow-left" style="margin-right: 8px;"></i>
+                        قراءة المقال
+                    </a>
+                </div>
+            </article>
+            
+            <!-- مقال 6 -->
+            <article class="article-card">
+                <img src="../assets/img/blog/outdoor-advertising.webp" 
+                     alt="الإعلانات الخارجية" 
+                     class="article-img">
+                <div class="article-content">
+                    <span class="article-category">الإعلان الخارجي</span>
+                    <h2 class="article-title">
+                        <a href="outdoor-advertising-design/index.html" style="color: inherit; text-decoration: none;">
+                            أسرار تصميم إعلان خارجي يجذب الانتباه في ثوانٍ
+                        </a>
+                    </h2>
+                    <p class="article-excerpt">
+                        الإعلانات الخارجية تواجه تحدياً كبيراً: جذب انتباه الناس خلال ثوانٍ معدودة. نستعرض مبادئ التصميم الفعال للإعلانات الخارجية مع دراسات حالة ونماذج ناجحة.
+                    </p>
+                    <div class="article-meta">
+                        <span><i class="fas fa-calendar-alt"></i> 18 فبراير 2024</span>
+                        <span style="margin: 0 15px;">|</span>
+                        <span><i class="fas fa-clock"></i> 6 دقائق قراءة</span>
+                    </div>
+                    <a href="outdoor-advertising-design/index.html" class="read-more-btn">
+                        <i class="fas fa-arrow-left" style="margin-right: 8px;"></i>
+                        قراءة المقال
+                    </a>
+                </div>
+            </article>
+            
+            <!-- مقال 7 -->
+            <article class="article-card">
+                <img src="../assets/img/blog/Photography-and-montage.webp" 
+                     alt="التصوير والمونتاج" 
+                     class="article-img">
+                <div class="article-content">
+                    <span class="article-category">التصوير والمونتاج</span>
+                    <h2 class="article-title">
+                        <a href="photography-and-montage/index.html" style="color: inherit; text-decoration: none;">
+                            أهمية التصوير الاحترافي في التسويق الرقمي
+                        </a>
+                    </h2>
+                    <p class="article-excerpt">
+                        كيف يمكن للتصوير الاحترافي والمونتاج المتميز أن يرفع من قيمة منتجاتك ويجذب عملاء جدد؟ دليل شامل لأفضل الممارسات في التصوير التسويقي.
+                    </p>
+                    <div class="article-meta">
+                        <span><i class="fas fa-calendar-alt"></i> 12 فبراير 2024</span>
+                        <span style="margin: 0 15px;">|</span>
+                        <span><i class="fas fa-clock"></i> 7 دقائق قراءة</span>
+                    </div>
+                    <a href="photography-and-montage/index.html" class="read-more-btn">
+                        <i class="fas fa-arrow-left" style="margin-right: 8px;"></i>
+                        قراءة المقال
+                    </a>
+                </div>
+            </article>
+            
+            <!-- مقال 8 -->
+            <article class="article-card">
+                <img src="../assets/img/blog/electronic-marketing.webp" 
+                     alt="التسويق الإلكتروني" 
+                     class="article-img">
+                <div class="article-content">
+                    <span class="article-category">التسويق الإلكتروني</span>
+                    <h2 class="article-title">
+                        <a href="electronic-marketing/index.html" style="color: inherit; text-decoration: none;">
+                            استراتيجيات التسويق الإلكتروني الناجحة للشركات الناشئة
+                        </a>
+                    </h2>
+                    <p class="article-excerpt">
+                        تعرف على كيفية بناء استراتيجية تسويق إلكتروني متكاملة تناسب الشركات الناشئة في جدة، مع خطوات عملية لبدء الحملات وتحقيق النتائج المرجوة.
+                    </p>
+                    <div class="article-meta">
+                        <span><i class="fas fa-calendar-alt"></i> 5 فبراير 2024</span>
+                        <span style="margin: 0 15px;">|</span>
+                        <span><i class="fas fa-clock"></i> 8 دقائق قراءة</span>
+                    </div>
+                    <a href="electronic-marketing/index.html" class="read-more-btn">
+                        <i class="fas fa-arrow-left" style="margin-right: 8px;"></i>
+                        قراءة المقال
+                    </a>
+                </div>
+            </article>
+            
+            <!-- مقال 9 -->
+            <article class="article-card">
+                <img src="../assets/img/blog/website-design.webp" 
+                     alt="تصميم المواقع" 
+                     class="article-img">
+                <div class="article-content">
+                    <span class="article-category">تصميم المواقع</span>
+                    <h2 class="article-title">
+                        <a href="website-design-guide/index.html" style="color: inherit; text-decoration: none;">
+                            كيف تصمم موقع إلكتروني يحقق أعلى معدلات التحويل؟
+                        </a>
+                    </h2>
+                    <p class="article-excerpt">
+                        دليل عملي لتصميم موقع إلكتروني فعال يزيد من مبيعاتك ويحسن تجربة المستخدم، مع نصائح وتقنيات مثبتة لرفع معدلات التحويل.
+                    </p>
+                    <div class="article-meta">
+                        <span><i class="fas fa-calendar-alt"></i> 28 يناير 2024</span>
+                        <span style="margin: 0 15px;">|</span>
+                        <span><i class="fas fa-clock"></i> 10 دقائق قراءة</span>
+                    </div>
+                    <a href="website-design-guide/index.html" class="read-more-btn">
+                        <i class="fas fa-arrow-left" style="margin-right: 8px;"></i>
+                        قراءة المقال
+                    </a>
+                </div>
+            </article>
+        </div>
+        
+        <!-- ترقيم الصفحات -->
+        <div class="pagination">
+            <a href="#" class="page-number active">1</a>
+            <a href="#" class="page-number">2</a>
+            <a href="#" class="page-number">3</a>
+            <a href="#" class="page-number">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+        </div>
+        
+        <!-- زر العودة للرئيسية -->
+        <div style="text-align: center;">
+            <a href="../index.html" class="back-btn">
+                <i class="fas fa-arrow-right"></i>
+                العودة للرئيسية
+            </a>
+        </div>
+    </main>
+    
+    <script>
+        // تأثيرات تفاعلية للمقالات
+        document.querySelectorAll('.article-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px)';
+                this.style.boxShadow = '0 15px 30px rgba(0,0,0,0.15)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = '0 5px 15px rgba(0,0,0,0.08)';
+            });
+        });
+        
+        // تحميل سلس للصور
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('.article-img');
+            images.forEach(img => {
+                img.style.opacity = '0';
+                img.style.transition = 'opacity 0.5s ease, transform 0.6s ease';
+                
+                if (img.complete) {
+                    img.style.opacity = '1';
+                } else {
+                    img.addEventListener('load', function() {
+                        this.style.opacity = '1';
+                    });
+                }
+            });
+            
+            // تأثيرات للترقيم
+            document.querySelectorAll('.page-number').forEach(page => {
+                page.addEventListener('mouseenter', function() {
+                    if (!this.classList.contains('active')) {
+                        this.style.transform = 'translateY(-3px)';
+                    }
+                });
+                
+                page.addEventListener('mouseleave', function() {
+                    if (!this.classList.contains('active')) {
+                        this.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
